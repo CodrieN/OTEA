@@ -37,6 +37,7 @@ a {
     display: flex;
     justify-content: space-evenly;
     margin-top: 40px;
+    margin-inline: 40px;
 }
 /* todo card 1---------------------------------------------------------------------- */
 .screen {
@@ -412,7 +413,7 @@ a {
 .screen2>.screen-content2>.screen-icon2 {
     color: rgb(255, 255, 255);
     font-size: 4rem;
-    text-shadow: 0px 0px 0.5rem white;
+    text-shadow: 0px 0px 0.5rem rgb(0, 0, 0);
 }
 
 .screen2>.screen-content2>.screen-user2 {
@@ -628,7 +629,7 @@ a {
     border-radius: 0.6rem;
 }
 
-.screen3>.screen-content3>.screen-icon3 {
+.screen3>.screen-content3>.screen-icon {
     color: rgb(255, 255, 255);
     font-size: 4rem;
     text-shadow: 0px 0px 0.5rem white;
