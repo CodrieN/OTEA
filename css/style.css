@@ -1,714 +1,763 @@
 :root {
-    --background-rgb: 0 0 0;
-    --blue-rgb: 33 150 243;
-    --white-rgb: 255 255 255;
-    --red-rgb: 255 160 122;
-    --primary-rgb: var(--blue-rgb);
-    --secondary-rgb: var(--white-rgb);
-    --third-rgb: var(--red-rgb);
+  --background-rgb: 0 0 0;
+  --blue-rgb: 0 85 164;
+  --white-rgb: 255 255 255;
+  --red-rgb: 239 65 53;
+  --primary-rgb: var(--blue-rgb);
+  --secondary-rgb: var(--white-rgb);
+  --third-rgb: var(--red-rgb);
+
+  --blob-color-1: rgb(var(--blue-rgb));
+  --blob-color-2: rgb(79, 30, 255);
 }
 
 * {
-    box-sizing: border-box;
-    text-decoration: none;
+  box-sizing: border-box;
+  text-decoration: none;
 }
 
 body {
-    place-items: center;
-    background-color: rgb(var(--background-rgb));
-    margin: 0rem;
-    overflow: hidden;
+  place-items: center;
+  background-color: rgb(var(--background-rgb));
+  margin: 0rem;
+  overflow: hidden;
 }
 
 nav div {
-    display: flex;
-    justify-content: space-around;
-
+  display: flex;
+  justify-content: space-around;
 }
-header{display: flex;
-    justify-content: space-evenly;
+nav {
+  display: flex;
+  justify-content: space-evenly;
+  justify-content: center;
 }
 
-#first_img{display: flex;
-justify-content: center;}
+#first_img {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  z-index: 1;
+  background-color: rgb(0, 0, 0);
+}
+
+#threecards {
+  margin-top: 50px;
+}
 
 a {
-    width: 100%;
-    display: flex;
-    justify-content: space-evenly;
-    margin-top: 40px;
-    margin-inline: 40px;
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 40px;
+  margin-inline: 40px;
 }
 /* todo card 1---------------------------------------------------------------------- */
 .screen {
-    width: 100%;
-    height: 800px;
-    display: flex;
-    justify-content: space-between;
-    border: 3px solid rgb(var(--primary-rgb) / 80%);
-    aspect-ratio: 10 / 16;
-    border-radius: 1rem;
-    background-color: rgb(var(--primary-rgb) / 15%);
-    overflow: auto;
-    position: relative;
-    z-index: 10;
-    margin-inline: 1rem;
+  width: 100%;
+  height: 700px;
+  display: flex;
+  justify-content: space-between;
+  border: 3px solid rgb(var(--primary-rgb) / 80%);
+  aspect-ratio: 10 / 16;
+  border-radius: 1rem;
+  background-color: rgb(var(--primary-rgb) / 15%);
+  overflow: auto;
+  position: relative;
+  z-index: 10;
+  margin-inline: 1rem;
 }
 
 .screen:after,
 .screen:before {
-    content: "";
-    height: 5px;
-    position: absolute;
-    z-index: 4;
-    left: 50%;
-    translate: -50% 0%;
-    background-color: white;
+  content: "";
+  height: 5px;
+  position: absolute;
+  z-index: 4;
+  left: 50%;
+  translate: -50% 0%;
+  background-color: white;
 }
 
 .screen:before {
-    width: 15%;
-    top: 0rem;
-    border-bottom-left-radius: 1rem;
-    border-bottom-right-radius: 1rem;
+  width: 15%;
+  top: 0rem;
+  border-bottom-left-radius: 1rem;
+  border-bottom-right-radius: 1rem;
 }
 
 .screen:after {
-    width: 25%;
-    bottom: 0rem;
-    border-top-left-radius: 1rem;
-    border-top-right-radius: 1rem;
+  width: 25%;
+  bottom: 0rem;
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
 }
 
 @keyframes pan-overlay {
-    from {
-        background-position: 0% 0%;
-    }
+  from {
+    background-position: 0% 0%;
+  }
 
-    to {
-        background-position: 0% -100%;
-    }
+  to {
+    background-position: 0% -100%;
+  }
 }
 
 .screen-overlay {
-    background: linear-gradient(rgb(var(--primary-rgb) / 0.15),
-            rgb(var(--primary-rgb) / 0.15) 3px,
-            transparent 3px,
-            transparent 9px);
-    background-size: 100% 9px;
-    height: 100%;
-    width: 100%;
-    animation: pan-overlay 22s infinite linear;
-    position: absolute;
-    z-index: 2;
-    left: 0px;
-    top: 0px;
+  background: linear-gradient(
+    rgb(var(--primary-rgb) / 0.15),
+    rgb(var(--primary-rgb) / 0.15) 3px,
+    transparent 3px,
+    transparent 9px
+  );
+  background-size: 100% 9px;
+  height: 100%;
+  width: 100%;
+  animation: pan-overlay 22s infinite linear;
+  position: absolute;
+  z-index: 2;
+  left: 0px;
+  top: 0px;
 }
 
 @keyframes pan-image {
-    0% {
-        background-position: 10% 50%;
-        background-size: 700%;
-    }
-
-    20% {
-        background-position: 30% 35%;
-        background-size: 400%;
-    }
-
-    20.0001% {
-        /* -- View 2 -- */
-        background-position: 60% 85%;
-        background-size: 500%;
-    }
-
-    40% {
-        background-position: 49% 81%;
-        background-size: 500%;
-    }
-
-    40.0001% {
-        /* -- View 3 -- */
-        background-position: 80% 42%;
-        background-size: 300%;
-    }
-
-    60% {
-        background-position: 84% 33%;
-        background-size: 300%;
-    }
-
-    60.0001% {
-        /* -- View 4 -- */
-        background-position: 0% 0%;
-        background-size: 300%;
-    }
-
-    80% {
-        background-position: 15% 4%;
-        background-size: 300%;
-    }
-
-    80.0001% {
-        /* -- View 5 -- */
-        background-position: 80% 10%;
-        background-size: 300%;
-    }
-
-    100% {
-        background-position: 72% 14%;
-        background-size: 300%;
-    }
-}
-
-
-.screen>.screen-image {
-    background-image: url("https://arma3.com/assets/img/wallpapers/artwork/4/Arma-3_v2_wallpaper_3840%C3%972160.jpg");
-    height: 100%;
-    width: 100%;
-    position: absolute;
-    z-index: 1;
-    left: 0px;
-    top: 0px;
-    background-size: 100%;
+  0% {
     background-position: 0% 0%;
-    filter: sepia(100%) hue-rotate(160deg);
-    opacity: 0.6;
-    animation: pan-image 40s linear infinite;
+    background-size: 300%;
+  }
+
+  20% {
+    background-position: 100% 0%;
+    background-size: 300%;
+  }
+
+  20.0001% {
+    /* -- View 2 -- */
+    background-position: 60% 0%;
+    background-size: 600%;
+  }
+
+  40% {
+    background-position: 55% 0%;
+    background-size: 800%;
+  }
+
+  40.0001% {
+    /* -- View 3 -- */
+    background-position: 90% 42%;
+    background-size: 400%;
+  }
+
+  60% {
+    background-position: 100% 33%;
+    background-size: 500%;
+  }
+
+  60.0001% {
+    /* -- View 4 -- */
+    background-position: 27% 25%;
+    background-size: 300%;
+  }
+
+  80% {
+    /* background-position: 27% 25%;
+    background-size: 700%; */
+  }
+
+  80.0001% {
+    /* -- View 5 -- */
+    background-position: 5% 45%;
+    background-size: 500%;
+  }
+
+  100% {
+    background-position: 3% 50%;
+    background-size: 900%;
+  }
 }
 
-.screen>.screen-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-end;
-    flex-grow: 1;
-    gap: 4rem;
-    position: relative;
-    z-index: 3;
-    margin: 1rem;
-    padding-bottom: 6rem;
-    border: 1px solid rgb(var(--primary-rgb) / 750%);
-    border-radius: 0.6rem;
+.screen > .screen-image {
+  background-image: url("https://arma3.com/assets/img/wallpapers/artwork/4/Arma-3_v2_wallpaper_3840%C3%972160.jpg");
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  z-index: 1;
+  left: 0px;
+  top: 0px;
+  background-size: 100%;
+  background-position: 0% 0%;
+  filter: sepia(100%) hue-rotate(160deg);
+  opacity: 0.6;
+  animation: pan-image 40s linear infinite;
 }
 
-.screen>.screen-content>.screen-icon {
-    color: rgb(255, 255, 255);
-    font-size: 4rem;
-    text-shadow: 0px 0px 0.5rem white;
+.screen > .screen-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  flex-grow: 1;
+  gap: 4rem;
+  position: relative;
+  z-index: 3;
+  margin: 1rem;
+  padding-bottom: 6rem;
+  border: 1px solid rgb(var(--primary-rgb) / 750%);
+  border-radius: 0.6rem;
 }
 
-.screen>.screen-content>.screen-user {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 1rem;
-    position: relative;
+.screen > .screen-content > .screen-icon {
+  color: rgb(255, 255, 255);
+  font-size: 4rem;
+  text-shadow: 0px 0px 0.5rem white;
 }
 
-
-
-.screen>.screen-content>.screen-user:before {
-    height: 2px;
-    width: 50px;
-    translate: -20px -1rem;
-    opacity: 0.75;
+.screen > .screen-content > .screen-user {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  position: relative;
 }
 
-.screen>.screen-content>.screen-user:after {
-    height: 3px;
-    width: 30px;
-    translate: 26px calc(-1rem - 0.5px);
+.screen > .screen-content > .screen-user:before {
+  height: 2px;
+  width: 50px;
+  translate: -20px -1rem;
+  opacity: 0.75;
 }
 
-.screen>.screen-content>.screen-user> :is(.name, .link) {
-    font-family: "Source Code Pro", monospace;
-    color: rgb(255, 255, 255);
-    text-align: center;
-    text-transform: uppercase;
+.screen > .screen-content > .screen-user:after {
+  height: 3px;
+  width: 30px;
+  translate: 26px calc(-1rem - 0.5px);
 }
 
-.screen>.screen-content>.screen-user>.name {
-    position: relative;
-    font-size: 4.25rem;
-    font-weight: 400;
+.screen > .screen-content > .screen-user > :is(.name, .link) {
+  font-family: "Source Code Pro", monospace;
+  color: rgb(255, 255, 255);
+  text-align: center;
+  text-transform: uppercase;
 }
 
-.screen>.screen-content>.screen-user>.name:before,
-.screen>.screen-content>.screen-user>.name:after {
-    content: "";
-    height: 4px;
-    width: 4px;
-    position: absolute;
-    border: 2px solid white;
-    border-radius: 2px;
+.screen > .screen-content > .screen-user > .name {
+  position: relative;
+  font-size: 4.25rem;
+  font-weight: 400;
 }
 
-.screen>.screen-content>.screen-user>.name:before {
-    top: 55%;
-    right: -1.5rem;
+.screen > .screen-content > .screen-user > .name:before,
+.screen > .screen-content > .screen-user > .name:after {
+  content: "";
+  height: 4px;
+  width: 4px;
+  position: absolute;
+  border: 2px solid white;
+  border-radius: 2px;
 }
 
-.screen>.screen-content>.screen-user>.name:after {
-    top: 45%;
-    left: -1.5rem;
+.screen > .screen-content > .screen-user > .name:before {
+  top: 55%;
+  right: -1.5rem;
 }
 
-.screen>.screen-content>.screen-user>.link {
-    opacity: 0.8;
-    font-size: 1.5rem;
-    text-shadow: 0px 0px 0.5rem white;
-    font-weight: 400;
-    letter-spacing: 0.3rem;
-    text-decoration: none;
+.screen > .screen-content > .screen-user > .name:after {
+  top: 45%;
+  left: -1.5rem;
 }
 
-.screen>.screen-content>.screen-user>.link:is(:hover, :focus) {
-    text-decoration: underline;
+.screen > .screen-content > .screen-user > .link {
+  opacity: 0.8;
+  font-size: 1.5rem;
+  text-shadow: 0px 0px 0.5rem white;
+  font-weight: 400;
+  letter-spacing: 0.3rem;
+  text-decoration: none;
+}
+
+.screen > .screen-content > .screen-user > .link:is(:hover, :focus) {
+  text-decoration: underline;
 }
 
 /* todo card 2---------------------------------------------------------------------- */
 .screen2 {
-    width: 100%;
-    height: 800px;
-    display: flex;
-    justify-content: space-between;
-    border: 3px solid rgb(var(--secondary-rgb) / 80%);
-    aspect-ratio: 10 / 16;
-    border-radius: 1rem;
-    background-color: rgb(var(--secondary-rgb) / 15%);
-    overflow: auto;
-    position: relative;
-    z-index: 10;
-    margin-inline: 1rem;
+  width: 100%;
+  height: 700px;
+  display: flex;
+  justify-content: space-between;
+  border: 3px solid rgb(var(--secondary-rgb) / 80%);
+  aspect-ratio: 10 / 16;
+  border-radius: 1rem;
+  background-color: rgb(var(--secondary-rgb) / 15%);
+  overflow: auto;
+  position: relative;
+  z-index: 10;
+  margin-inline: 1rem;
 }
 
 .screen2:after,
 .screen2:before {
-    content: "";
-    height: 5px;
-    position: absolute;
-    z-index: 4;
-    left: 50%;
-    translate: -50% 0%;
-    background-color: white;
+  content: "";
+  height: 5px;
+  position: absolute;
+  z-index: 4;
+  left: 50%;
+  translate: -50% 0%;
+  background-color: white;
 }
 
 .screen2:before {
-    width: 15%;
-    top: 0rem;
-    border-bottom-left-radius: 1rem;
-    border-bottom-right-radius: 1rem;
+  width: 15%;
+  top: 0rem;
+  border-bottom-left-radius: 1rem;
+  border-bottom-right-radius: 1rem;
 }
 
 .screen2:after {
-    width: 25%;
-    bottom: 0rem;
-    border-top-left-radius: 1rem;
-    border-top-right-radius: 1rem;
+  width: 25%;
+  bottom: 0rem;
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
 }
 
 .screen-overlay2 {
-    background: linear-gradient(rgb(var(--secondary-rgb) / 0.15),
-            rgb(var(--secondary-rgb) / 0.15) 3px,
-            transparent 3px,
-            transparent 9px);
-    background-size: 100% 9px;
-    height: 100%;
-    width: 100%;
-    animation: pan-overlay 22s infinite linear;
-    position: absolute;
-    z-index: 2;
-    left: 0px;
-    top: 0px;
+  background: linear-gradient(
+    rgb(var(--secondary-rgb) / 0.15),
+    rgb(var(--secondary-rgb) / 0.15) 3px,
+    transparent 3px,
+    transparent 9px
+  );
+  background-size: 100% 9px;
+  height: 100%;
+  width: 100%;
+  animation: pan-overlay 22s infinite linear;
+  position: absolute;
+  z-index: 2;
+  left: 0px;
+  top: 0px;
 }
-
 
 @keyframes pan-image2 {
-    0% {
-        background-position: 50% 50%;
-        background-size: 700%;
-    }
+  0% {
+    background-position: 50% 50%;
+    background-size: 700%;
+  }
 
-    20% {
-        background-position: 50% 50%;
-        background-size: 200%;
-    }
+  20% {
+    background-position: 60% 50%;
+    background-size: 300%;
+  }
 
-    20.0001% {
-        /* -- View 2 -- */
-        background-position: 60% 85%;
-        background-size: 500%;
-    }
+  20.0001% {
+    /* -- View 2 -- */
+    background-position: 60% 85%;
+    background-size: 500%;
+  }
 
-    40% {
-        background-position: 49% 81%;
-        background-size: 500%;
-    }
+  40% {
+    background-position: 49% 81%;
+    background-size: 500%;
+  }
 
-    40.0001% {
-        /* -- View 3 -- */
-        background-position: 80% 42%;
-        background-size: 300%;
-    }
+  40.0001% {
+    /* -- View 3 -- */
+    background-position: 80% 42%;
+    background-size: 300%;
+  }
 
-    60% {
-        background-position: 84% 33%;
-        background-size: 300%;
-    }
+  60% {
+    background-position: 84% 33%;
+    background-size: 300%;
+  }
 
-    60.0001% {
-        /* -- View 4 -- */
-        background-position: 0% 0%;
-        background-size: 300%;
-    }
-
-    80% {
-        background-position: 15% 4%;
-        background-size: 300%;
-    }
-
-    80.0001% {
-        /* -- View 5 -- */
-        background-position: 80% 10%;
-        background-size: 300%;
-    }
-
-    100% {
-        background-position: 72% 14%;
-        background-size: 300%;
-    }
-}
-
-.screen2>.screen-image2 {
-    background-image: url("https://arma3.com/assets/img/wallpapers/jets/2/%20Arma%203%20%20Jets_wallpaper_3840%C3%972160.jpg");
-    height: 100%;
-    width: 100%;
-    position: absolute;
-    z-index: 1;
-    left: 0px;
-    top: 0px;
-    background-size: 100%;
+  60.0001% {
+    /* -- View 4 -- */
     background-position: 0% 0%;
-    opacity: 0.6;
-    animation: pan-image2 20s linear infinite;
+    background-size: 300%;
+  }
+
+  80% {
+    background-position: 15% 4%;
+    background-size: 300%;
+  }
+
+  80.0001% {
+    /* -- View 5 -- */
+    background-position: 80% 10%;
+    background-size: 300%;
+  }
+
+  100% {
+    background-position: 72% 14%;
+    background-size: 300%;
+  }
 }
 
-
-.screen2>.screen-content2 {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-end;
-    flex-grow: 1;
-    gap: 4rem;
-    position: relative;
-    z-index: 3;
-    margin: 1rem;
-    padding-bottom: 6rem;
-    border: 1px solid rgb(var(--secondary-rgb) / 750%);
-    border-radius: 0.6rem;
+.screen2 > .screen-image2 {
+  background-image: url("https://arma3.com/assets/img/wallpapers/jets/2/%20Arma%203%20%20Jets_wallpaper_3840%C3%972160.jpg");
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  z-index: 1;
+  left: 0px;
+  top: 0px;
+  background-size: 100%;
+  background-position: 0% 0%;
+  opacity: 0.6;
+  animation: pan-image2 20s linear infinite;
 }
 
-.screen2>.screen-content2>.screen-icon2 {
-    color: rgb(255, 255, 255);
-    font-size: 4rem;
-    text-shadow: 0px 0px 0.5rem rgb(0, 0, 0);
+.screen2 > .screen-content2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  flex-grow: 1;
+  gap: 4rem;
+  position: relative;
+  z-index: 3;
+  margin: 1rem;
+  padding-bottom: 6rem;
+  border: 1px solid rgb(var(--secondary-rgb) / 750%);
+  border-radius: 0.6rem;
 }
 
-.screen2>.screen-content2>.screen-user2 {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 1rem;
-    position: relative;
+.screen2 > .screen-content2 > .screen-icon2 {
+  color: rgb(255, 255, 255);
+  font-size: 4rem;
+  text-shadow: 0px 0px 0.5rem rgb(0, 0, 0);
 }
 
-
-
-.screen2>.screen-content2>.screen-user2:before {
-    height: 2px;
-    width: 50px;
-    translate: -20px -1rem;
-    opacity: 0.75;
+.screen2 > .screen-content2 > .screen-user2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  position: relative;
 }
 
-.screen2>.screen-content2>.screen-user2:after {
-    height: 3px;
-    width: 30px;
-    translate: 26px calc(-1rem - 0.5px);
+.screen2 > .screen-content2 > .screen-user2:before {
+  height: 2px;
+  width: 50px;
+  translate: -20px -1rem;
+  opacity: 0.75;
 }
 
-.screen2>.screen-content2>.screen-user2> :is(.name, .link) {
-    font-family: "Source Code Pro", monospace;
-    color: rgb(255, 255, 255);
-    text-align: center;
-    text-transform: uppercase;
+.screen2 > .screen-content2 > .screen-user2:after {
+  height: 3px;
+  width: 30px;
+  translate: 26px calc(-1rem - 0.5px);
 }
 
-.screen2>.screen-content2>.screen-user2>.name {
-    position: relative;
-    font-size: 4.25rem;
-    font-weight: 400;
+.screen2 > .screen-content2 > .screen-user2 > :is(.name, .link) {
+  font-family: "Source Code Pro", monospace;
+  color: rgb(255, 255, 255);
+  text-align: center;
+  text-transform: uppercase;
 }
 
-.screen2>.screen-content2>.screen-user2>.name:before,
-.screen2>.screen-content2>.screen-user2>.name:after {
-    content: "";
-    height: 4px;
-    width: 4px;
-    position: absolute;
-    border: 2px solid white;
-    border-radius: 2px;
+.screen2 > .screen-content2 > .screen-user2 > .name {
+  position: relative;
+  font-size: 4.25rem;
+  font-weight: 400;
 }
 
-.screen2>.screen-content2>.screen-user2>.name:before {
-    top: 55%;
-    right: -1.5rem;
+.screen2 > .screen-content2 > .screen-user2 > .name:before,
+.screen2 > .screen-content2 > .screen-user2 > .name:after {
+  content: "";
+  height: 4px;
+  width: 4px;
+  position: absolute;
+  border: 2px solid white;
+  border-radius: 2px;
 }
 
-.screen2>.screen-content2>.screen-user2>.name:after {
-    top: 45%;
-    left: -1.5rem;
+.screen2 > .screen-content2 > .screen-user2 > .name:before {
+  top: 55%;
+  right: -1.5rem;
 }
 
-.screen2>.screen-content2>.screen-user2>.link {
-    opacity: 0.8;
-    font-size: 1.5rem;
-    text-shadow: 0px 0px 0.5rem white;
-    font-weight: 400;
-    letter-spacing: 0.3rem;
-    text-decoration: none;
+.screen2 > .screen-content2 > .screen-user2 > .name:after {
+  top: 45%;
+  left: -1.5rem;
 }
 
-.screen2>.screen-content2>.screen-user2>.link:is(:hover, :focus) {
-    text-decoration: underline;
+.screen2 > .screen-content2 > .screen-user2 > .link {
+  opacity: 0.8;
+  font-size: 1.5rem;
+  text-shadow: 0px 0px 0.5rem white;
+  font-weight: 400;
+  letter-spacing: 0.3rem;
+  text-decoration: none;
+}
+
+.screen2 > .screen-content2 > .screen-user2 > .link:is(:hover, :focus) {
+  text-decoration: underline;
 }
 
 /* todo card 3---------------------------------------------------------------------- */
 .screen3 {
-    width: 100%;
-    height: 800px;
-    display: flex;
-    justify-content: space-between;
-    border: 3px solid rgb(var(--third-rgb) / 80%);
-    aspect-ratio: 10 / 16;
-    border-radius: 1rem;
-    background-color: rgb(var(--third-rgb) / 15%);
-    overflow: auto;
-    position: relative;
-    z-index: 10;
-    margin-inline: 1rem;
+  width: 100%;
+  height: 700px;
+  display: flex;
+  justify-content: space-between;
+  border: 3px solid rgb(var(--third-rgb) / 80%);
+  aspect-ratio: 10 / 16;
+  border-radius: 1rem;
+  background-color: rgb(var(--third-rgb) / 15%);
+  overflow: auto;
+  position: relative;
+  z-index: 10;
+  margin-inline: 1rem;
 }
 
 .screen3:after,
 .screen3:before {
-    content: "";
-    height: 5px;
-    position: absolute;
-    z-index: 4;
-    left: 50%;
-    translate: -50% 0%;
-    background-color: white;
+  content: "";
+  height: 5px;
+  position: absolute;
+  z-index: 4;
+  left: 50%;
+  translate: -50% 0%;
+  background-color: white;
 }
 
 .screen3:before {
-    width: 15%;
-    top: 0rem;
-    border-bottom-left-radius: 1rem;
-    border-bottom-right-radius: 1rem;
+  width: 15%;
+  top: 0rem;
+  border-bottom-left-radius: 1rem;
+  border-bottom-right-radius: 1rem;
 }
 
 .screen3:after {
-    width: 25%;
-    bottom: 0rem;
-    border-top-left-radius: 1rem;
-    border-top-right-radius: 1rem;
+  width: 25%;
+  bottom: 0rem;
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
 }
 
 .screen-overlay3 {
-    background: linear-gradient(rgb(var(--third-rgb) / 0.15),
-            rgb(var(--third-rgb) / 0.15) 3px,
-            transparent 3px,
-            transparent 9px);
-    background-size: 100% 9px;
-    height: 100%;
-    width: 100%;
-    animation: pan-overlay 22s infinite linear;
-    position: absolute;
-    z-index: 2;
-    left: 0px;
-    top: 0px;
+  background: linear-gradient(
+    rgb(var(--third-rgb) / 0.15),
+    rgb(var(--third-rgb) / 0.15) 3px,
+    transparent 3px,
+    transparent 9px
+  );
+  background-size: 100% 9px;
+  height: 100%;
+  width: 100%;
+  animation: pan-overlay 22s infinite linear;
+  position: absolute;
+  z-index: 2;
+  left: 0px;
+  top: 0px;
 }
-
-
 
 @keyframes pan-image3 {
-    0% {
-        background-position: 10% 50%;
-        background-size: 700%;
-    }
+  0% {
+    background-position: 10% 50%;
+    background-size: 700%;
+  }
 
-    20% {
-        background-position: 10% 50%;
-        background-size: 400%;
-    }
+  20% {
+    background-position: 10% 50%;
+    background-size: 400%;
+  }
 
-    20.0001% {
-        /* -- View 2 -- */
-        background-position: 60% 85%;
-        background-size: 500%;
-    }
+  20.0001% {
+    /* -- View 2 -- */
+    background-position: 60% 85%;
+    background-size: 500%;
+  }
 
-    40% {
-        background-position: 49% 81%;
-        background-size: 500%;
-    }
+  40% {
+    background-position: 49% 81%;
+    background-size: 500%;
+  }
 
-    40.0001% {
-        /* -- View 3 -- */
-        background-position: 80% 42%;
-        background-size: 300%;
-    }
+  40.0001% {
+    /* -- View 3 -- */
+    background-position: 80% 42%;
+    background-size: 300%;
+  }
 
-    60% {
-        background-position: 84% 33%;
-        background-size: 300%;
-    }
+  60% {
+    background-position: 84% 33%;
+    background-size: 300%;
+  }
 
-    60.0001% {
-        /* -- View 4 -- */
-        background-position: 0% 0%;
-        background-size: 300%;
-    }
-
-    80% {
-        background-position: 15% 4%;
-        background-size: 300%;
-    }
-
-    80.0001% {
-        /* -- View 5 -- */
-        background-position: 80% 10%;
-        background-size: 300%;
-    }
-
-    100% {
-        background-position: 72% 14%;
-        background-size: 300%;
-    }
-}
-
-.screen3>.screen-image3 {
-    background-image: url("https://arma3.com/assets/img/wallpapers/marksmen/2/Arma%203%20Marksmen_wallpaper_3840%C3%972160.jpg");
-    height: 100%;
-    width: 100%;
-    position: absolute;
-    z-index: 1;
-    left: 0px;
-    top: 0px;
-    background-size: 100%;
+  60.0001% {
+    /* -- View 4 -- */
     background-position: 0% 0%;
-    filter: sepia(100%) hue-rotate(0deg);
-    opacity: 0.6;
-    animation: pan-image 15s linear infinite;
+    background-size: 300%;
+  }
+
+  80% {
+    background-position: 15% 4%;
+    background-size: 300%;
+  }
+
+  80.0001% {
+    /* -- View 5 -- */
+    background-position: 80% 10%;
+    background-size: 300%;
+  }
+
+  100% {
+    background-position: 72% 14%;
+    background-size: 300%;
+  }
 }
 
-.screen3>.screen-content3 {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-end;
-    flex-grow: 1;
-    gap: 4rem;
-    position: relative;
-    z-index: 3;
-    margin: 1rem;
-    padding-bottom: 6rem;
-    border: 1px solid rgb(var(--third-rgb) / 750%);
-    border-radius: 0.6rem;
+.screen3 > .screen-image3 {
+  background-image: url("https://arma3.com/assets/img/wallpapers/marksmen/2/Arma%203%20Marksmen_wallpaper_3840%C3%972160.jpg");
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  z-index: 1;
+  left: 0px;
+  top: 0px;
+  background-size: 100%;
+  background-position: 0% 0%;
+  filter: sepia(100%) hue-rotate(0deg);
+  opacity: 0.6;
+  animation: pan-image 15s linear infinite;
 }
 
-.screen3>.screen-content3>.screen-icon {
-    color: rgb(255, 255, 255);
-    font-size: 4rem;
-    text-shadow: 0px 0px 0.5rem white;
+.screen3 > .screen-content3 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  flex-grow: 1;
+  gap: 4rem;
+  position: relative;
+  z-index: 3;
+  margin: 1rem;
+  padding-bottom: 6rem;
+  border: 1px solid rgb(var(--third-rgb) / 750%);
+  border-radius: 0.6rem;
 }
 
-.screen3>.screen-content3>.screen-user3 {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 1rem;
-    position: relative;
+.screen3 > .screen-content3 > .screen-icon {
+  color: rgb(255, 255, 255);
+  font-size: 4rem;
+  text-shadow: 0px 0px 0.5rem white;
 }
 
-
-
-.screen3>.screen-content3>.screen-user3:before {
-    height: 2px;
-    width: 50px;
-    translate: -20px -1rem;
-    opacity: 0.75;
+.screen3 > .screen-content3 > .screen-user3 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  position: relative;
 }
 
-.screen3>.screen-content3>.screen-user3:after {
-    height: 3px;
-    width: 30px;
-    translate: 26px calc(-1rem - 0.5px);
+.screen3 > .screen-content3 > .screen-user3:before {
+  height: 2px;
+  width: 50px;
+  translate: -20px -1rem;
+  opacity: 0.75;
 }
 
-.screen3>.screen-content3>.screen-user3> :is(.name, .link) {
-    font-family: "Source Code Pro", monospace;
-    color: rgb(255, 255, 255);
-    text-align: center;
-    text-transform: uppercase;
+.screen3 > .screen-content3 > .screen-user3:after {
+  height: 3px;
+  width: 30px;
+  translate: 26px calc(-1rem - 0.5px);
 }
 
-.screen3>.screen-content3>.screen-user3>.name {
-    position: relative;
-    font-size: 4.25rem;
-    font-weight: 400;
+.screen3 > .screen-content3 > .screen-user3 > :is(.name, .link) {
+  font-family: "Source Code Pro", monospace;
+  color: rgb(255, 255, 255);
+  text-align: center;
+  text-transform: uppercase;
 }
 
-.screen3>.screen-content3>.screen-user3>.name:before,
-.screen3>.screen-content3>.screen-user3>.name:after {
-    content: "";
-    height: 4px;
-    width: 4px;
-    position: absolute;
-    border: 2px solid white;
-    border-radius: 2px;
+.screen3 > .screen-content3 > .screen-user3 > .name {
+  position: relative;
+  font-size: 4.25rem;
+  font-weight: 400;
 }
 
-.screen3>.screen-content3>.screen-user3>.name:before {
-    top: 55%;
-    right: -1.5rem;
+.screen3 > .screen-content3 > .screen-user3 > .name:before,
+.screen3 > .screen-content3 > .screen-user3 > .name:after {
+  content: "";
+  height: 4px;
+  width: 4px;
+  position: absolute;
+  border: 2px solid white;
+  border-radius: 2px;
 }
 
-.screen3>.screen-content3>.screen-user3>.name:after {
-    top: 45%;
-    left: -1.5rem;
+.screen3 > .screen-content3 > .screen-user3 > .name:before {
+  top: 55%;
+  right: -1.5rem;
 }
 
-.screen3>.screen-content3>.screen-user3>.link {
-    opacity: 0.8;
-    font-size: 1.5rem;
-    text-shadow: 0px 0px 0.5rem white;
-    font-weight: 400;
-    letter-spacing: 0.3rem;
-    text-decoration: none;
+.screen3 > .screen-content3 > .screen-user3 > .name:after {
+  top: 45%;
+  left: -1.5rem;
 }
 
-.screen3>.screen-content3>.screen-user3>.link:is(:hover, :focus) {
-    text-decoration: underline;
+.screen3 > .screen-content3 > .screen-user3 > .link {
+  opacity: 0.8;
+  font-size: 1.5rem;
+  text-shadow: 0px 0px 0.5rem white;
+  font-weight: 400;
+  letter-spacing: 0.3rem;
+  text-decoration: none;
 }
 
+.screen3 > .screen-content3 > .screen-user3 > .link:is(:hover, :focus) {
+  text-decoration: underline;
+}
 
+@media (max-width: 700px) {
+  .screen {
+    scale: 0.6;
+    margin-bottom: 0rem;
+  }
+}
 
-@media(max-width: 700px) {
-    .screen {
-        scale: 0.6;
-        margin-bottom: 0rem;
-    }
+/* -- Blob effect -- */
+
+@keyframes rotate {
+  from {
+    rotate: 0deg;
+  }
+
+  50% {
+    scale: 1 1.5;
+  }
+
+  to {
+    rotate: 360deg;
+  }
+}
+
+#blob {
+  background-color: white;
+  height: 34vmax;
+  aspect-ratio: 1;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  translate: -50% -50%;
+  border-radius: 50%;
+  background: linear-gradient(
+    to right,
+    var(--blob-color-1),
+    var(--blob-color-2)
+  );
+  animation: rotate 20s infinite;
+  transition: s ease;
+  opacity: 0.5;
+}
+
+#blur {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  z-index: 0;
+  backdrop-filter: blur(12vmax);
 }
