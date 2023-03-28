@@ -449,21 +449,21 @@ a {
   translate: 26px calc(-1rem - 0.5px);
 }
 
-.screen2 > .screen-content2 > .screen-user2 > :is(.name, .link) {
+.screen2 > .screen-content2 > .screen-user2 > :is(.name2) {
   font-family: "Source Code Pro", monospace;
   color: rgb(255, 255, 255);
   text-align: center;
   text-transform: uppercase;
 }
 
-.screen2 > .screen-content2 > .screen-user2 > .name {
+.screen2 > .screen-content2 > .screen-user2 > .name2 {
   position: relative;
   font-size: 4.25rem;
   font-weight: 400;
 }
 
-.screen2 > .screen-content2 > .screen-user2 > .name:before,
-.screen2 > .screen-content2 > .screen-user2 > .name:after {
+.screen2 > .screen-content2 > .screen-user2 > .name2:before,
+.screen2 > .screen-content2 > .screen-user2 > .name2:after {
   content: "";
   height: 4px;
   width: 4px;
@@ -472,12 +472,12 @@ a {
   border-radius: 2px;
 }
 
-.screen2 > .screen-content2 > .screen-user2 > .name:before {
+.screen2 > .screen-content2 > .screen-user2 > .name2:before {
   top: 55%;
   right: -1.5rem;
 }
 
-.screen2 > .screen-content2 > .screen-user2 > .name:after {
+.screen2 > .screen-content2 > .screen-user2 > .name2:after {
   top: 45%;
   left: -1.5rem;
 }
@@ -666,21 +666,21 @@ a {
   translate: 26px calc(-1rem - 0.5px);
 }
 
-.screen3 > .screen-content3 > .screen-user3 > :is(.name, .link) {
+.screen3 > .screen-content3 > .screen-user3 > :is(.name3, .link) {
   font-family: "Source Code Pro", monospace;
   color: rgb(255, 255, 255);
   text-align: center;
   text-transform: uppercase;
 }
 
-.screen3 > .screen-content3 > .screen-user3 > .name {
+.screen3 > .screen-content3 > .screen-user3 > .name3 {
   position: relative;
   font-size: 4.25rem;
   font-weight: 400;
 }
 
-.screen3 > .screen-content3 > .screen-user3 > .name:before,
-.screen3 > .screen-content3 > .screen-user3 > .name:after {
+.screen3 > .screen-content3 > .screen-user3 > .name3:before,
+.screen3 > .screen-content3 > .screen-user3 > .name3:after {
   content: "";
   height: 4px;
   width: 4px;
@@ -689,12 +689,12 @@ a {
   border-radius: 2px;
 }
 
-.screen3 > .screen-content3 > .screen-user3 > .name:before {
+.screen3 > .screen-content3 > .screen-user3 > .name3:before {
   top: 55%;
   right: -1.5rem;
 }
 
-.screen3 > .screen-content3 > .screen-user3 > .name:after {
+.screen3 > .screen-content3 > .screen-user3 > .name3:after {
   top: 45%;
   left: -1.5rem;
 }

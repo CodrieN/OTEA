@@ -20,8 +20,8 @@ const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
 let interval = null;
 
-const screen = document.querySelector(".screen"),
-  name = document.querySelector(".name");
+const screen = document.querySelector(".screen");
+const name = document.querySelector(".name");
 
 screen.onmouseenter = (event) => {
   let iteration = 0;
