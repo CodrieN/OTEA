@@ -61,9 +61,8 @@ header {
   padding-right: 70%;
 }
 
-#thirdPicture{
-  width: 30%;
-
+#thirdPicture, #forthdPicture, #fifthPicture, #sixthPicture, #seventhPicture, #heighthPicture{
+  width: 33%;
 }
 
 
