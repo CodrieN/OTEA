@@ -48,25 +48,37 @@ header {
   justify-content: center;
 }
 
-#secondPicture{
-  scale: .2;
-  position: absolute;top: -90px; left: -110px;
+#secondPicture {
+  scale: 0.1;
+  position: absolute;
+  top: -190px;
+  left: -190px;
 }
-#secondPicture:hover{
-  scale: .5;
-  position: absolute;top: 0px; left: 0px;
-  transition: 400ms;
-}
-#firstP{
+
+#firstP {
   padding-right: 70%;
 }
 
-#thirdPicture, #forthdPicture, #fifthPicture, #sixthPicture, #seventhPicture, #heighthPicture{
+/* #thirdPicture, #forthdPicture, #fifthPicture, #sixthPicture, #seventhPicture, #heighthPicture, #ninthPicture, #tenthPicture,#eleventhPicture {
+  width: 33%;
+} */
+
+.pic {
   width: 33%;
 }
-
-
-
+.pic:hover {
+  scale: 200%;
+  transition: 600ms;
+  border-radius: 10px;
+}
+.picLeft:hover {
+  position: relative;
+  left: 260px;
+}
+.picRight:hover {
+  position: relative;
+  left: -260px;
+}
 
 a {
   width: 100%;
@@ -91,8 +103,7 @@ a:active {
   text-decoration: none;
 }
 
-
-#mainPicture{
+#mainPicture {
   width: 100%;
 }
 h1,
@@ -216,17 +227,16 @@ li {
   flex-wrap: wrap;
 }
 
-#etatMajor{
+#etatMajor {
   display: flex;
-  justify-content:space-between;
+  justify-content: space-between;
   margin-inline: 25%;
 }
 
-.soldats{
+.soldats {
   flex-wrap: wrap;
   display: flex;
-  justify-content:space-between;
-
+  justify-content: space-between;
 }
 
 .person {
