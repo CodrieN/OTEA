@@ -20,7 +20,7 @@ body {
   place-items: center;
   background-color: rgb(var(--background-rgb));
   margin: 0rem;
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 
 nav div {
@@ -761,3 +761,9 @@ a {
   z-index: 0;
   backdrop-filter: blur(12vmax);
 }
+
+#footer {
+  z-index: 100;
+}
+
+
