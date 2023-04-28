@@ -33,14 +33,28 @@ nav {
   margin-bottom: 40px;
 }
 
-nav a {
-  color: white;
-}
-
 header {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
+}
+
+nav a {
+  color: white;
+}
+
+#up{
+  position: sticky;
+  top: 0px;
+  left: 2000px;
+  width: 100%;
+  display: flex;
+}
+
+#leclerc {
+  scale: 0.15;
+  position: absolute;
+  left: 1655px;
 }
 
 #first_img {
@@ -75,17 +89,16 @@ header {
 }
 
 .picLeft {
-  transform-origin: left; 
+  transform-origin: left;
   transition: transform 0.6s;
 }
 
 .picLeft:hover {
   transform-origin: left;
-
 }
 
 .picRight {
-  transform-origin: right; 
+  transform-origin: right;
   transition: transform 0.6s;
 }
 .picRight:hover {
@@ -335,7 +348,7 @@ li {
 }
 .img4 {
   left: 70px;
-  top: 324px;
+  top: 270px;
   width: 266px;
 }
 .img5 {
@@ -439,8 +452,6 @@ li {
   opacity: 40%;
 }
 
-
 #barouf {
   color: white;
-  
 }
