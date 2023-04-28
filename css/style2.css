@@ -299,6 +299,7 @@ li {
   top: -200px;
 }
 .circle {
+  background-color: darkcyan;
   border-radius: 50%;
   cursor: pointer;
   height: 480px;
