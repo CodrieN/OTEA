@@ -27,6 +27,7 @@ body {
   overflow: visible;
 }
 
+
 nav {
   display: flex;
   justify-content: space-between;
@@ -43,7 +44,7 @@ nav a {
   color: white;
 }
 
-#up{
+#up {
   position: sticky;
   top: 0px;
   left: 2000px;
@@ -52,9 +53,9 @@ nav a {
 }
 
 #leclerc {
-  scale: 0.15;
+  scale: 0.4;
   position: absolute;
-  left: 1655px;
+right: -140px;
 }
 
 #first_img {
